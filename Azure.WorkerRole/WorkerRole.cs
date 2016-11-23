@@ -5,14 +5,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading;
-using CefSharp;
-using CefSharp.OffScreen;
-using ChromiumPrototype.MessageHandlers;
+using Azure.WorkerRole.MessageHandlers;
+using CefGlueScreenshot.Offscreen;
 using Microsoft.Azure;
 using Microsoft.ServiceBus;
 using Microsoft.ServiceBus.Messaging;
 using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.ServiceRuntime;
+using Xilium.CefGlue;
 
 namespace Azure.WorkerRole
 {
@@ -27,11 +27,23 @@ namespace Azure.WorkerRole
         QueueClient Client;
         QueueClient CompletedClient;
         ManualResetEvent CompletedEvent = new ManualResetEvent(false);
-        http://joelverhagen.com/blog/2013/12/headless-chromium-in-c-with-cefglue/
+        
 
         public override void Run()
         {
-            Cef.Initialize(new CefSettings(), performDependencyCheck: true, browserProcessHandler: null);
+            var mainArgs = new CefMainArgs(new string[] { });
+            var app = new OffscreenApp();
+            CefRuntime.ExecuteProcess(mainArgs, app, IntPtr.Zero);
+
+            // init CEF
+            var settings = new CefSettings
+            {
+                SingleProcess = false,
+                MultiThreadedMessageLoop = true,
+                LogSeverity = CefLogSeverity.Error,
+                LogFile = "CefGlue.log"
+            };
+            CefRuntime.Initialize(mainArgs, settings, app, IntPtr.Zero);
 
             Trace.WriteLine("Starting processing of messages");
 
@@ -44,6 +56,7 @@ namespace Azure.WorkerRole
                         Trace.WriteLine("Processing Service Bus message: " + receivedMessage.SequenceNumber.ToString());
                         var handler = MessageHandlerFactory.GetMessageHandler(receivedMessage.ContentType);
                         handler.Handle(receivedMessage, CompletedClient);
+                        receivedMessage.Complete();
                     }
                     catch(Exception ex)
                     {

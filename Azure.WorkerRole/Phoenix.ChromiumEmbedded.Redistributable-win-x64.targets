@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ChromiumEmbeddedRedistributableOutputPath Condition="'$(ChromiumEmbeddedRedistributableOutputPath)' == ''">.</ChromiumEmbeddedRedistributableOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)LICENSE.txt">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\LICENSE.txt</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)d3dcompiler_43.dll">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\d3dcompiler_43.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)d3dcompiler_47.dll">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\d3dcompiler_47.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)libcef.dll">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\libcef.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)libEGL.dll">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\libEGL.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)libGLESv2.dll">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\libGLESv2.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)widevinecdmadapter.dll">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\widevinecdmadapter.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)natives_blob.bin">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\natives_blob.bin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)snapshot_blob.bin">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\snapshot_blob.bin</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)icudtl.dat">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\icudtl.dat</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)cef.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\cef.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)cef_100_percent.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\cef_100_percent.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)cef_200_percent.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\cef_200_percent.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)cef_extensions.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\cef_extensions.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)devtools_resources.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\devtools_resources.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\am.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\am.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\ar.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\ar.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\bg.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\bg.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\bn.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\bn.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\ca.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\ca.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\cs.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\cs.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\da.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\da.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\de.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\de.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\el.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\el.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\en-GB.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\en-GB.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\en-US.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\en-US.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\es-419.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\es-419.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\es.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\es.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\et.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\et.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\fa.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\fa.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\fi.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\fi.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\fil.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\fil.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\fr.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\fr.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\gu.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\gu.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\he.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\he.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\hi.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\hi.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\hr.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\hr.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\hu.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\hu.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\id.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\id.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\it.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\it.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\ja.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\ja.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\kn.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\kn.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\ko.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\ko.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\lt.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\lt.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\lv.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\lv.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\ml.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\ml.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\mr.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\mr.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\ms.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\ms.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\nb.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\nb.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\nl.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\nl.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\pl.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\pl.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\pt-BR.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\pt-BR.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\pt-PT.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\pt-PT.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\ro.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\ro.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\ru.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\ru.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\sk.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\sk.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\sl.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\sl.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\sr.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\sr.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\sv.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\sv.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\sw.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\sw.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\ta.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\ta.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\te.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\te.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\th.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\th.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\tr.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\tr.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\uk.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\uk.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\vi.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\vi.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\zh-CN.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\zh-CN.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(MSBuildThisFileDirectory)locales\zh-TW.pak">
+      <Link>$(ChromiumEmbeddedRedistributableOutputPath)\locales\zh-TW.pak</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

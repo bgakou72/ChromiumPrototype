@@ -14,61 +14,46 @@ namespace ChromiumPrototype.ConsoleTests
 {
     class Program
     {
-        static QueueClient JobsClient;
         static QueueClient CompletedClient;
         static BlobStorage Storage;
-        private static ManualResetEvent _completedEvent;
-        const string QueueName = "BrowserJobs";
-        const string CompletedQueueName = "CompletedJobs";
-
+        const string connectionString = "Endpoint=sb://chromiumprototype.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=8AKkOajy1GB0JIc43XMgCmDyhm9JEIqv/lEE3LHH26k=";
 
         static void Main(string[] args)
         {
-            _completedEvent = new ManualResetEvent(false);
 
             Storage = new BlobStorage("htmls");
-
-            string connectionString = "Endpoint=sb://chromiumprototype.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=8AKkOajy1GB0JIc43XMgCmDyhm9JEIqv/lEE3LHH26k=";
-            var namespaceManager = NamespaceManager.CreateFromConnectionString(connectionString);
-            if (!namespaceManager.QueueExists(QueueName))
-            {
-                namespaceManager.CreateQueue(QueueName);
-            }
-
-            if (!namespaceManager.QueueExists(CompletedQueueName))
-            {
-                namespaceManager.CreateQueue(CompletedQueueName);
-            }
-
-            // Initialize the connection to Service Bus Queue
-            JobsClient = QueueClient.CreateFromConnectionString(connectionString, QueueName);
-            CompletedClient = QueueClient.CreateFromConnectionString(connectionString, CompletedQueueName);
-
-            CompletedClient.OnMessage(Callback);
-
-            var message = new GoToUrlMessage()
-            {
-                SessionId = Guid.NewGuid(),
-                Url = "http://google.com"
-            };
-
-            JobsClient.Send(message.ToBrokeredMessage());
             
-            _completedEvent.WaitOne();
+            CompletedClient = QueueClient.CreateFromConnectionString(connectionString, "CompletedJobs");
+            CompletedClient.OnMessage(Callback);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Waiting...");
+
+            while (true)
+            {
+                
+                Thread.Sleep(100);
+            }
         }
 
         private static void Callback(BrokeredMessage brokeredMessage)
         {
             var message = brokeredMessage.GetBody<ContentReadyMessage>();
-            Console.WriteLine("Received completed job {0}", message.SessionId);
-            Console.WriteLine("Reading file {0}", message.FileName);
+
+            brokeredMessage.Complete();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("{0} Received completed job {1}", DateTime.Now, message.SessionId);
+            Console.WriteLine("{0} Reading file {1}", DateTime.Now, message.FileName);
             var conteudo = Storage.Read(message.FileName);
+            Console.WriteLine("{0} File read! Length: {1} ", DateTime.Now, conteudo.Length);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("{0} Content: ", DateTime.Now);
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine();
-            Console.Write(conteudo);
+            Console.Write(conteudo.Length > 5000 ? conteudo.Substring(0,5000) : conteudo);
             Console.WriteLine();
-            Console.ReadKey();
-            _completedEvent.Set();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Waiting...");
+
         }
     }
 }
